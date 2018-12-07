@@ -44,6 +44,9 @@
             this.btnDisplay = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnMax = new System.Windows.Forms.Button();
+            this.btnMin = new System.Windows.Forms.Button();
+            this.btnAvg = new System.Windows.Forms.Button();
             this.grbSort.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +104,7 @@
             // 
             // lstOut
             // 
+            this.lstOut.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOut.FormattingEnabled = true;
             this.lstOut.Location = new System.Drawing.Point(43, 127);
             this.lstOut.Name = "lstOut";
@@ -170,7 +174,7 @@
             // 
             // btnDisplay
             // 
-            this.btnDisplay.Location = new System.Drawing.Point(330, 169);
+            this.btnDisplay.Location = new System.Drawing.Point(464, 165);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(75, 23);
             this.btnDisplay.TabIndex = 13;
@@ -180,7 +184,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(455, 169);
+            this.btnClear.Location = new System.Drawing.Point(464, 194);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 14;
@@ -190,7 +194,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(395, 212);
+            this.btnExit.Location = new System.Drawing.Point(464, 223);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 15;
@@ -198,11 +202,44 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnMax
+            // 
+            this.btnMax.Location = new System.Drawing.Point(355, 165);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(75, 23);
+            this.btnMax.TabIndex = 16;
+            this.btnMax.Text = "Max Salary";
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+            // 
+            // btnMin
+            // 
+            this.btnMin.Location = new System.Drawing.Point(355, 194);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(75, 23);
+            this.btnMin.TabIndex = 17;
+            this.btnMin.Text = "Min Salary";
+            this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // btnAvg
+            // 
+            this.btnAvg.Location = new System.Drawing.Point(355, 223);
+            this.btnAvg.Name = "btnAvg";
+            this.btnAvg.Size = new System.Drawing.Size(75, 23);
+            this.btnAvg.TabIndex = 18;
+            this.btnAvg.Text = "Avg Salary";
+            this.btnAvg.UseVisualStyleBackColor = true;
+            this.btnAvg.Click += new System.EventHandler(this.btnAvg_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 288);
+            this.Controls.Add(this.btnAvg);
+            this.Controls.Add(this.btnMin);
+            this.Controls.Add(this.btnMax);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDisplay);
@@ -247,6 +284,9 @@
         private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnMax;
+        private System.Windows.Forms.Button btnMin;
+        private System.Windows.Forms.Button btnAvg;
     }
 }
 

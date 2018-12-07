@@ -18,9 +18,10 @@ namespace LabExam03_Prep
             InitializeComponent();
         }
 
+        //DON'T FORGET INTRO COMMENTS
         private const int cSize = 100;
         private string[] mName = new string[cSize];
-        private string[] mSalary = new string[cSize]; //If any calculations, declare appropriately (i.e. int or double)
+        private double[] mSalary = new double[cSize]; //If any calculations, declare appropriately (i.e. int or double)
         private bool[] mTenure = new bool[cSize];
         private int mIndex = 0;
         private string mFileName = Path.Combine(Application.StartupPath, "Data.txt");
@@ -73,8 +74,16 @@ namespace LabExam03_Prep
             string salary = txtSalary.Text;
 
             mName[mIndex] = name;
-            mSalary[mIndex] = salary;
+            mSalary[mIndex] = double.Parse(salary);
             mTenure[mIndex] = chkTenure.Checked;
+            name = txtName.Text; //set the values for string variables
+            int length = name.Length; //Length of name
+            string firstLetter = name.Substring(0, 1);        // first letter
+            string rest = name.Substring(1, length - 1);  // rest of the letters in name
+            string properCase = firstLetter.ToUpper() + rest.ToLower();
+            //-	Store the last name in proper case at proper index.
+            mName[mIndex] = properCase;
+
             mIndex++;
 
             if(mIndex == cSize)
@@ -99,7 +108,7 @@ namespace LabExam03_Prep
             lstOut.Items.Add("=================================================================================");
             for(int ctr = 0; ctr<mIndex; ctr++)
             {
-                lstOut.Items.Add(mName[ctr].PadRight(15) + mSalary[ctr].PadRight(15) + mTenure[ctr]);
+                lstOut.Items.Add(mName[ctr].PadRight(15) + mSalary[ctr].ToString("c").PadRight(15) + mTenure[ctr]);
             }
         }
 
@@ -126,7 +135,7 @@ namespace LabExam03_Prep
             }
             int index = lstOut.SelectedIndex - 2;
             txtName.Text = mName[index];
-            txtSalary.Text = mSalary[index];
+            txtSalary.Text = mSalary[index].ToString("n");
             chkTenure.Checked = mTenure[index];
         }
 
@@ -156,7 +165,7 @@ namespace LabExam03_Prep
             lstOut.Items.Add("=================================================================================");
             for (int ctr = 0; ctr < mIndex; ctr++)
             {
-                lstOut.Items.Add(mName[ctr].PadRight(15) + mSalary[ctr].PadRight(15) + mTenure[ctr]);
+                lstOut.Items.Add(mName[ctr].PadRight(15) + mSalary[ctr].ToString("c").PadRight(15) + mTenure[ctr]);
             }
         }
 
@@ -187,7 +196,7 @@ namespace LabExam03_Prep
                 lstOut.Items.Add("Discovered name: " + mName[ctr]);
                 lstOut.Items.Add("Name".PadRight(15) + "Salary".PadRight(15) + "Tenure");
                 lstOut.Items.Add("=================================================================================");
-                lstOut.Items.Add(mName[ctr].PadRight(15) + mSalary[ctr].PadRight(15) + mTenure[ctr]);
+                lstOut.Items.Add(mName[ctr].PadRight(15) + mSalary[ctr].ToString("c").PadRight(15) + mTenure[ctr]);
             }
             else
             {
@@ -228,6 +237,53 @@ namespace LabExam03_Prep
                     }
                 }
             }
+        }
+
+        private void btnMax_Click(object sender, EventArgs e)
+        {
+            lstOut.Items.Clear();
+            double max = mSalary[0];
+            string name = "";
+            for(int ctr = 1; ctr<mIndex; ctr++)
+            {
+                if(max<mSalary[ctr])
+                {
+                    max = mSalary[ctr];
+                    name = mName[ctr];
+                }
+            }
+            lstOut.Items.Add("Maximum salary: " + max.ToString("c"));
+            lstOut.Items.Add("Person with max salary: " + name);
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            lstOut.Items.Clear();
+            double min = mSalary[0];
+            string name = "";
+            for (int ctr = 1; ctr < mIndex; ctr++)
+            {
+                if (min > mSalary[ctr])
+                {
+                    min = mSalary[ctr];
+                    name = mName[ctr];
+                }
+            }
+            lstOut.Items.Add("Minimum salary: " + min.ToString("c"));
+            lstOut.Items.Add("Person with max salary: " + name);
+        }
+
+        private void btnAvg_Click(object sender, EventArgs e)
+        {
+            lstOut.Items.Clear();
+            double avg;
+            double sum = 0;
+            for(int ctr = 0; ctr<mIndex; ctr++)
+            {
+                sum += mSalary[ctr];
+            }
+            avg = sum / mIndex;
+            lstOut.Items.Add("Average salary: " + avg.ToString("c"));
         }
     }
 }
