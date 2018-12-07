@@ -1,0 +1,2 @@
+Smith	5000True
+Doe	2000False

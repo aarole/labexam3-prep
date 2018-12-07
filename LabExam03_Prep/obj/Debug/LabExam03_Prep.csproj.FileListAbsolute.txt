@@ -1,0 +1,10 @@
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\bin\Debug\LabExam03_Prep.exe.config
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\bin\Debug\LabExam03_Prep.exe
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\bin\Debug\LabExam03_Prep.pdb
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.csprojAssemblyReference.cache
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.Form1.resources
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.Properties.Resources.resources
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.csproj.GenerateResource.cache
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.csproj.CoreCompileInputs.cache
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.exe
+W:\CNIT 155\LabExam03_Prep\LabExam03_Prep\obj\Debug\LabExam03_Prep.pdb
